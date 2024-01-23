@@ -41,4 +41,4 @@ done
 ####
 
 #https://stackoverflow.com/a/46433245/3929620
-. /docker-entrypoint.sh
+. /usr/local/bin/docker-entrypoint.sh
