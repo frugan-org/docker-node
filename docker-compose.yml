@@ -1,0 +1,25 @@
+version: '3.9'
+
+services:
+
+  node:
+    container_name: ${NODE_NAME}
+    build:
+      context: .
+      args:
+        TAG: ${NODE_TAG}
+    restart: unless-stopped
+    networks:
+      - default
+    ports:
+      - ${NODE_PORT}:3000
+    #https://dev.to/igmrrf/docker-react-exited-with-code-0-398n
+    #https://stackoverflow.com/a/63427684/3929620
+    #https://stackoverflow.com/a/52336349/3929620
+    tty: true
+    environment:
+      NODE_ENV: ${NODE_ENV}
+      NODE_WAITFORIT_CONTAINER_NAME: ${NODE_WAITFORIT_CONTAINER_NAME}
+      NODE_WAITFORIT_CONTAINER_PORT: ${NODE_WAITFORIT_CONTAINER_PORT}
+      NODE_NPM_GLOBAL_LIBS: ${NODE_NPM_GLOBAL_LIBS}
+      NODE_NPM_PATHS: ${NODE_NPM_PATHS}
