@@ -24,16 +24,16 @@ fi
 IFS=',' read -ra libs <<< "${NODE_NPM_GLOBAL_LIBS}";
 for lib in "${libs[@]}"
 do
-  runuser -l node -c "PATH=$PATH; npm install -g ${lib}";
+  npm install -g "${lib}";
 done
 
 IFS=',' read -ra paths <<< "${NODE_NPM_PATHS}";
 for path in "${paths[@]}"
 do
   if [ "${NODE_ENV}" = "development" ]; then
-    runuser -l node -c "PATH=$PATH; cd ${path}; npm install";
+    cd "${path}"; npm install;
   else
-    runuser -l node -c "PATH=$PATH; cd ${path}; npm install --only=production";
+    cd "${path}"; npm install --only=production;
   fi
 done
 

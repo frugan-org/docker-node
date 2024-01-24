@@ -28,6 +28,7 @@ COPY entrypoint.sh /
 #https://github.com/docker-library/postgres/issues/296#issuecomment-308735942
 RUN chmod +x /entrypoint.sh
 
+USER node
 EXPOSE 3000
 
 ENTRYPOINT ["/entrypoint.sh"]
