@@ -30,10 +30,10 @@ done
 IFS=',' read -ra paths <<< "${NODE_NPM_PATHS}";
 for path in "${paths[@]}"
 do
-  if [ "${NODE_ENV}" = "development" ]; then
-    cd "${path}"; npm install;
+  if [ "${NODE_ENV}" = "production" ]; then
+    cd "${path}"; npm install --only=production; 
   else
-    cd "${path}"; npm install --only=production;
+    cd "${path}"; npm install;
   fi
 done
 
