@@ -7,6 +7,8 @@ RUN apk update && apk add --no-cache \
     automake \
     bash \
     build-base \
+    ca-certificates \
+    curl \
     gcc \
     git \
     libpng-dev \
