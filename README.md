@@ -2,7 +2,9 @@
 
 # Docker Node.js
 
-Customization of the [Official Node.js Docker image](https://github.com/nodejs/docker-node).
+Customization of the [Official Node.js Docker image](https://github.com/nodejs/docker-node) with optional integration of:
+
+- [wait-for-it](https://github.com/vishnubob/wait-for-it)
 
 ### Changelog
 
