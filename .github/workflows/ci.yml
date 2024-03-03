@@ -30,14 +30,23 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       -
-        name: Build and push [20-alpine, latest]
+        name: Build and push [20-alpine]
         uses: docker/build-push-action@v5
         with:
           context: ./20-alpine
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/node:20-alpine,${{ secrets.DOCKERHUB_USERNAME }}/node:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/node:20-alpine
           cache-from: type=gha
           cache-to: type=gha,mode=max
+      -
+        name: Build and push [21-alpine, latest]
+        uses: docker/build-push-action@v5
+        with:
+          context: ./21-alpine
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/node:21-alpine,${{ secrets.DOCKERHUB_USERNAME }}/node:latest
+          cache-from: type=gha
+          cache-to: type=gha,mode=max 
       # Docker Hub Personal Access Tokens cannot be used as they are not supported by the API.
       # Unfortunately, this means that enabling 2FA on Docker Hub will prevent the action from working.
       -
