@@ -14,6 +14,8 @@ deploy() {
 # Only Active LTS or Maintenance LTS versions are supported (currently v18 and v20).
 # Odd-number releases of Node, known as "current" versions of Node.js, are not supported (e.g. v19, v21).
 TAGS=(
+	18-alpine
+	19-alpine
 	20-alpine
 	21-alpine
 	22-alpine

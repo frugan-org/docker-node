@@ -30,6 +30,24 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       -
+        name: Build and push [18-alpine]
+        uses: docker/build-push-action@v6
+        with:
+          context: ./18-alpine
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/node:18-alpine
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+      -
+        name: Build and push [19-alpine]
+        uses: docker/build-push-action@v6
+        with:
+          context: ./19-alpine
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/node:19-alpine
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+      -
         name: Build and push [20-alpine]
         uses: docker/build-push-action@v6
         with:
@@ -37,7 +55,7 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/node:20-alpine
           cache-from: type=gha
-          cache-to: type=gha,mode=max
+          cache-to: type=gha,mode=max 
       -
         name: Build and push [21-alpine]
         uses: docker/build-push-action@v6
