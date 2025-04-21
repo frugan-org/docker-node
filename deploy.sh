@@ -16,6 +16,7 @@ deploy() {
 TAGS=(
 	20-alpine
 	21-alpine
+	22-alpine
 )
 
 ENTRYPOINT=entrypoint.sh
