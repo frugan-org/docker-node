@@ -23,5 +23,5 @@ See auto-[CHANGELOG](CHANGELOG.md) file.
 
 ### License
 
-(ɔ) Copyleft 2024 [Frugan](https://frugan.it).  
+(ɔ) Copyleft 2025 [Frugan](https://frugan.it).  
 [GNU GPLv3](https://choosealicense.com/licenses/gpl-3.0/), see [COPYING](COPYING) file.
