@@ -31,7 +31,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       -
         name: Build and push [18-alpine]
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           context: ./18-alpine
           push: true
@@ -40,7 +40,7 @@ jobs:
           cache-to: type=gha,mode=max
       -
         name: Build and push [19-alpine]
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           context: ./19-alpine
           push: true
@@ -49,7 +49,7 @@ jobs:
           cache-to: type=gha,mode=max
       -
         name: Build and push [20-alpine]
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           context: ./20-alpine
           push: true
@@ -58,7 +58,7 @@ jobs:
           cache-to: type=gha,mode=max 
       -
         name: Build and push [21-alpine]
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           context: ./21-alpine
           push: true
@@ -67,7 +67,7 @@ jobs:
           cache-to: type=gha,mode=max 
       -
         name: Build and push [22-alpine]
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           context: ./22-alpine
           push: true
@@ -76,7 +76,7 @@ jobs:
           cache-to: type=gha,mode=max
       -
         name: Build and push [23-alpine]
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           context: ./23-alpine
           push: true
@@ -85,7 +85,7 @@ jobs:
           cache-to: type=gha,mode=max
       -
         name: Build and push [24-alpine, latest]
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           context: ./24-alpine
           push: true
