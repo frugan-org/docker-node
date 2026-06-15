@@ -66,12 +66,30 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max 
       -
-        name: Build and push [22-alpine, latest]
+        name: Build and push [22-alpine]
         uses: docker/build-push-action@v6
         with:
           context: ./22-alpine
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/node:22-alpine,${{ secrets.DOCKERHUB_USERNAME }}/node:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/node:22-alpine
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+      -
+        name: Build and push [23-alpine]
+        uses: docker/build-push-action@v6
+        with:
+          context: ./23-alpine
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/node:23-alpine
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+      -
+        name: Build and push [24-alpine, latest]
+        uses: docker/build-push-action@v6
+        with:
+          context: ./24-alpine
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/node:24-alpine,${{ secrets.DOCKERHUB_USERNAME }}/node:latest
           cache-from: type=gha
           cache-to: type=gha,mode=max 
       # Docker Hub Personal Access Tokens cannot be used as they are not supported by the API.

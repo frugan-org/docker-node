@@ -19,6 +19,8 @@ TAGS=(
 	20-alpine
 	21-alpine
 	22-alpine
+	23-alpine
+	24-alpine
 )
 
 ENTRYPOINT=entrypoint.sh
